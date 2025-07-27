@@ -26,7 +26,8 @@ if (worksheet == null)
 
 // Determine the column index of the specified header.
 int columnIndex = -1;
-int headerRow = worksheet.Dimension.Start.Row;
+//int headerRow = worksheet.Dimension.Start.Row;
+int headerRow = 5; 
 for (int col = worksheet.Dimension.Start.Column; col <= worksheet.Dimension.End.Column; col++)
 {
     if (worksheet.Cells[headerRow, col].Text.Trim() == columnHeader)
