@@ -6,7 +6,8 @@ using OfficeOpenXml;
 // use of the library.
 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
-var filePath = @"C:\Users\SupunRathnayake\Downloads\V1HBL_PD-WCM_Term Loan_Jul 2024_ai.xlsx";
+var filePath = @"C:\Users\Supun\Downloads\V1HBL_PD-WCM_Term Loan_Jul 2024.xlsx";
+var password = "EY@FaaS";
 var sheetName = "2023-Jul";
 var columnHeader = "2023-Jul DPD Bucket";
 
@@ -16,7 +17,7 @@ if (!File.Exists(filePath))
     return;
 }
 
-using var package = new ExcelPackage(new FileInfo(filePath));
+using var package = new ExcelPackage(new FileInfo(filePath), password);
 var worksheet = package.Workbook.Worksheets[sheetName];
 if (worksheet == null)
 {
